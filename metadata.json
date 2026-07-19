@@ -1,0 +1,6 @@
+{
+  "name": "CDP Partnership Limited",
+  "description": "A modern, dark-themed React application for an elite Nigerian Quantity Surveying and Project Management consultancy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
