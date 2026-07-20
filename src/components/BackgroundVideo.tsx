@@ -26,7 +26,7 @@ export function BackgroundVideo() {
     const src = 'https://website-assets-precious-ogungbile.s3.eu-north-1.amazonaws.com/Let_it_look_construction_ish_t.mp4';
     let hls: Hls | null = null;
 
-    if (Hls.isSupported()) {
+    if (Hls.isSupported() && !src.endsWith('.mp4')) {
       hls = new Hls({
         maxBufferLength: 120,
         maxMaxBufferLength: 600,
@@ -74,6 +74,7 @@ export function BackgroundVideo() {
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       // Native HLS (Safari)
       video.src = src;
+      video.load();
       // Simulate progress since FRAG_BUFFERED won't fire for native
       let simProgress = 0;
       const interval = setInterval(() => {
@@ -87,6 +88,7 @@ export function BackgroundVideo() {
     } else {
       // Fallback for MP4 on non-Safari browsers since it's an MP4 link
       video.src = src;
+      video.load();
       let simProgress = 0;
       const interval = setInterval(() => {
         simProgress += 10;
@@ -98,9 +100,17 @@ export function BackgroundVideo() {
       }, { once: true });
     }
 
-    const handleCanPlay = () => setIsLoaded(true);
+    const handleCanPlay = () => {
+      setProgress(100);
+      setIsLoaded(true);
+    };
     video.addEventListener('canplay', handleCanPlay);
     video.addEventListener('loadeddata', handleCanPlay);
+    video.addEventListener('error', handleCanPlay);
+    
+    if (video.readyState >= 2) {
+      handleCanPlay();
+    }
     
     // Throttle Seeking Logic
     const doSeek = () => {
@@ -191,10 +201,12 @@ export function BackgroundVideo() {
     <>
       {!isLoaded && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black">
-          <div className="text-white text-2xl font-sans tracking-widest">
-            Loading... {progress}%
-          </div>
-          <div className="w-64 h-1 bg-white/20 mt-4 rounded-full overflow-hidden">
+          <img 
+            src="/cdp-logo.png" 
+            alt="CDP Partnership" 
+            className="w-48 md:w-56 h-auto animate-pulse mb-6" 
+          />
+          <div className="w-64 h-1 bg-white/10 rounded-full overflow-hidden">
             <div 
               className="h-full bg-red-600 transition-all duration-300"
               style={{ width: `${progress}%` }}
@@ -209,7 +221,7 @@ export function BackgroundVideo() {
             className="w-full h-full object-cover scale-[1.35]"
             muted
             playsInline
-            crossOrigin="anonymous"
+            preload="auto"
           />
         </div>
         <div className="absolute inset-0 bg-black/60 z-10" />

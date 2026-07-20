@@ -14,21 +14,19 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 pointer-events-auto">
-      {/* Logo */}
-      <div className="flex items-center gap-2 text-white font-bold text-xl tracking-tight z-50">
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-red-600"
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 bg-black/60 backdrop-blur-md border-b border-white/10 pointer-events-auto">
+      <div className="flex items-center gap-3 z-50">
+        <img 
+          src="/cdp-logo.png" 
+          alt="CDP Partnership Logo" 
+          className="h-10 w-auto object-contain" 
+        />
+        <span 
+          className="text-white text-xl md:text-2xl hidden sm:block tracking-wide" 
+          style={{ fontFamily: '"Algerian", serif' }}
         >
-          <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="currentColor" />
-          <path d="M2 23L16 30L30 23V9L16 16L2 9V23Z" fill="currentColor" fillOpacity="0.5" />
-        </svg>
-        <span className="hidden sm:block">CDP Partnership</span>
+          CDP Partnership
+        </span>
       </div>
 
       {/* Desktop Links (Center Pill) */}

@@ -19,7 +19,7 @@ export function ContactSection() {
             </h2>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-8 items-start bg-black/30 p-8 rounded-2xl border border-white/10 backdrop-blur-md relative overflow-hidden">
+          <div className="flex flex-col md:flex-row gap-8 items-start bg-black/40 p-8 rounded-2xl border border-white/10 backdrop-blur-md relative overflow-hidden">
              {/* Abstract background shape */}
              <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-900/20 rounded-full blur-3xl pointer-events-none"></div>
              

@@ -36,7 +36,7 @@ export function StatsSection() {
         </div>
 
         {/* Middle Row - Metrics Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-white/10 rounded-2xl overflow-hidden bg-black/20 backdrop-blur-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-white/10 rounded-2xl overflow-hidden bg-black/40 backdrop-blur-md">
           {metrics.map((metric, idx) => (
             <div 
               key={idx} 

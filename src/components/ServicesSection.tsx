@@ -60,7 +60,7 @@ export function ServicesSection() {
           {services.map((svc, idx) => (
             <div 
               key={idx}
-              className="group flex gap-6 p-6 md:p-8 bg-black/20 hover:bg-black/40 backdrop-blur-md border border-white/5 hover:border-white/20 transition-all duration-300 rounded-xl"
+              className="group flex gap-6 p-6 md:p-8 bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/5 hover:border-white/20 transition-all duration-300 rounded-xl"
             >
               <div className="flex-shrink-0 mt-1 p-3 bg-white/5 rounded-lg border border-white/10 group-hover:bg-red-950/30 group-hover:border-red-500/30 transition-colors">
                 {svc.icon}
