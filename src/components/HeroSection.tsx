@@ -26,7 +26,7 @@ export function HeroSection() {
 
           <button className="flex items-center justify-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium rounded transition-all shadow-xl w-full sm:w-auto">
             <LayoutGrid size={20} className="text-white/70" />
-            View Projects
+            Featured Projects
           </button>
         </div>
       </div>

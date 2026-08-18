@@ -9,10 +9,10 @@ export function StatsSection() {
   ];
 
   const frameworks = [
-    { name: "RICS", desc: "Royal Institution of Chartered Surveyors", icon: <Globe size={20} /> },
-    { name: "NIQS", desc: "Nigerian Institute of Quantity Surveyors", icon: <Award size={20} /> },
-    { name: "QSRBN", desc: "Quantity Surveyors Registration Board of Nigeria", icon: <ShieldCheck size={20} /> },
-    { name: "CIArb", desc: "Chartered Institute of Arbitrators", icon: <CheckCircle size={20} /> }
+    { name: "RICS", desc: "Royal Institution of Chartered Surveyors", icon: <img src="/rics-1-logo-png-transparent.png" alt="RICS Logo" className="h-8 md:h-10 w-auto object-contain bg-white/10 rounded-sm p-1" /> },
+    { name: "NIQS", desc: "Nigerian Institute of Quantity Surveyors", icon: <img src="/niqs-logo.png" alt="NIQS Logo" className="h-8 md:h-10 w-auto object-contain bg-white/10 rounded-sm p-1" /> },
+    { name: "QSRBN", desc: "Quantity Surveyors Registration Board of Nigeria", icon: <img src="/QSRBN-LOGO-1.png" alt="QSRBN Logo" className="h-8 md:h-10 w-auto object-contain bg-white/10 rounded-sm p-1" /> },
+    { name: "CIArb", desc: "Chartered Institute of Arbitrators", icon: <img src="/ciarb_logo.svg" alt="CIArb Logo" className="h-8 md:h-10 w-auto object-contain bg-white/10 rounded-sm p-1" /> }
   ];
 
   return (
